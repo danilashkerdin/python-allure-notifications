@@ -1,4 +1,3 @@
-from os.path import join
 import argparse
 import matplotlib.pyplot as plt
 import requests
@@ -6,7 +5,8 @@ import json
 
 
 def parse_summary_json(report_path) -> dict:
-    with open(join(report_path, 'widgets', 'summary.json'), 'r') as file:
+    path = f'{report_path}/widgets/summary.json'
+    with open(path, 'r') as file:
         data = json.load(file)
     statistic = data['statistic']
 
@@ -17,7 +17,7 @@ def generate_image(broken=0, passed=0, skipped=0, unknown=0, failed=0, total=0, 
 
     labels = ['Broken', 'Passed', 'Skipped', 'Unknown', 'Failed']
     sizes = [broken, passed, skipped, unknown, failed]
-    colors = ['#ffc107', '#28a745', '#17a2b8', '#dc3545']
+    colors = ['#ffc107', '#28a745', '#17a2b8', '#800080','#dc3545']
 
     plt.pie(sizes, colors=colors, shadow=False, startangle=140, autopct='%1.1f%%')
     plt.axis('equal')
@@ -42,9 +42,9 @@ def send_image(image, bot_token, chat_id):
 
 def main():
     parser = argparse.ArgumentParser(description='Send pie chart image to Telegram chat')
-    parser.add_argument('bot_token', type=str, help='Telegram bot token', required=True)
-    parser.add_argument('chat_id', type=str, help='Telegram chat id', required=True)
-    parser.add_argument('report_folder_path', type=str, help='Path to allure report folder', required=True)
+    parser.add_argument('bot_token', type=str, help='Telegram bot token')
+    parser.add_argument('chat_id', type=str, help='Telegram chat id')
+    parser.add_argument('report_folder_path', type=str, help='Path to allure report folder')
     args = parser.parse_args()
 
     result_image_path = "pie_chart.png"

@@ -6,15 +6,6 @@ The project is a simple implementation of generating an allure report in the for
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Prerequisites
-What you need to install the software and how to install them:
-
-Python
-
-Matplotlib
-
-Requests
-
 ## Installation
 A step by step series of examples that tell you how to get a development environment running:
 
@@ -34,7 +25,7 @@ Usage
 An example of how to run the code:
 
 `
-python main.py --token [BOT_TOKEN] --chat [CHAT_ID] --path [IMAGE_PATH]
+python main.py <BOT_TOKEN> <CHAT_ID> <PATH_TO_REPORT_FOLDER>
 `
 
 ## License

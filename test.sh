@@ -1,1 +1,2 @@
-python main.py <YOUR_TOKEN> <YOUR_CHAT_ID> <PATH_TO_ALLURE_REPORT>
+#!/bin/sh
+python main.py <BOT_TOKEN> <CHAT_ID> allure-report
