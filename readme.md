@@ -1,6 +1,8 @@
 # Python allure notifications 
 The project is a simple implementation of generating an allure report in the form of a pie chart and sending it to a telegram chat using telegram API. The report contains the statistics of test runs, such as the number of passed, failed, skipped, unknown, and broken tests.
 
+![img.png](image/img.png)
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
